@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- EXTERIOR Section -->
+    <div class="container">
+        <h3>Exterior</h3>
+        <div class="form-group">
+            <label for="exteriorDamage">Rust, Dent or Damage to Exterior:</label>
+            <select id="exteriorDamage" name="exteriorDamage" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exteriorDamageImage">Upload Image if Damaged:</label>
+            <input type="file" id="exteriorDamageImage" name="exteriorDamageImage" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="oilLeakSuspension">Oil Leak in Suspension:</label>
+            <select id="oilLeakSuspension" name="oilLeakSuspension" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exteriorSummary">Exterior Overall Summary:</label>
+            <textarea id="exteriorSummary" name="exteriorSummary" maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exteriorImages">Upload Exterior Images:</label>
+            <input type="file" id="exteriorImages" name="exteriorImages" accept="image/*" multiple>
+        </div>
+
+        <!-- BRAKES Section -->
+        <h3>Brakes</h3>
+        <div class="form-group">
+            <label for="brakeFluidLevel">Brake Fluid Level:</label>
+            <select id="brakeFluidLevel" name="brakeFluidLevel" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brakeConditionFront">Brake Condition for Front:</label>
+            <select id="brakeConditionFront" name="brakeConditionFront" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Needs Replacement">Needs Replacement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brakeConditionRear">Brake Condition for Rear:</label>
+            <select id="brakeConditionRear" name="brakeConditionRear" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Needs Replacement">Needs Replacement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="emergencyBrake">Emergency Brake:</label>
+            <select id="emergencyBrake" name="emergencyBrake" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brakeSummary">Brake Overall Summary:</label>
+            <textarea id="brakeSummary" name="brakeSummary" maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="brakeImages">Upload Brake Images:</label>
+            <input type="file" id="brakeImages" name="brakeImages" accept="image/*" multiple>
+        </div>
+</body>
+</div>
+
+</html>

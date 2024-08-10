@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function redirectToPage() {
+            var select = document.getElementById('part');
+            var selectedValue = select.value;
+            if (selectedValue) {
+                window.location.href = selectedValue + '.html';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Select Your Queries</h2>
+    <form action="#" method="post" onsubmit="redirectToPage(); return false;">
+        <label for="part">Choose a part:</label>
+        <select id="part" name="part">
+            <option value="" disabled selected>Select an option</option>
+            <option value="tire">tire</option>
+            <option value="engine">engine</option>
+            <option value="brakes">brakes</option>
+            <option value="battery">battery</option>
+        </select>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

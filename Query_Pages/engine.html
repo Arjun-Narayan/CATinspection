@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- ENGINE Section -->
+        <h3>Engine</h3>
+        <div class="form-group">
+            <label for="engineDamage">Rust, Dents or Damage in Engine:</label>
+            <select id="engineDamage" name="engineDamage" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engineDamageImage">Upload Image if Damaged:</label>
+            <input type="file" id="engineDamageImage" name="engineDamageImage" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="engineOilCondition">Engine Oil Condition:</label>
+            <select id="engineOilCondition" name="engineOilCondition" required>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engineOilColor">Engine Oil Color:</label>
+            <select id="engineOilColor" name="engineOilColor" required>
+                <option value="Clean">Clean</option>
+                <option value="Brown">Brown</option>
+                <option value="Black">Black</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brakeFluidCondition">Brake Fluid Condition:</label>
+            <select id="brakeFluidCondition" name="brakeFluidCondition" required>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brakeFluidColor">Brake Fluid Color:</label>
+            <select id="brakeFluidColor" name="brakeFluidColor" required>
+                <option value="Clean">Clean</option>
+                <option value="Brown">Brown</option>
+                <option value="Black">Black</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engineOilLeak">Any Oil Leak in Engine:</label>
+            <select id="engineOilLeak" name="engineOilLeak" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engineSummary">Engine Overall Summary:</label>
+            <textarea id="engineSummary" name="engineSummary" maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="engineImages">Upload Engine Images:</label>
+            <input type="file" id="engineImages" name="engineImages" accept="image/*" multiple>
+        </div>
+        <div class="form-group">
+            <label for="audioInput">Record or Upload Audio:</label>
+            <input type="file" id="audioInput" name="audio" accept="audio/*" capture>
+            <br><br>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>

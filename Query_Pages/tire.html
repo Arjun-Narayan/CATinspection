@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Queries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- TIRES Section -->
+        <h3>Tires</h3>
+        <div class="form-group">
+            <label for="tirePressureLF">Tire Pressure for Left Front:</label>
+            <input type="number" id="tirePressureLF" name="tirePressureLF" required>
+        </div>
+        <div class="form-group">
+            <label for="tirePressureRF">Tire Pressure for Right Front:</label>
+            <input type="number" id="tirePressureRF" name="tirePressureRF" required>
+        </div>
+        <div class="form-group">
+            <label for="tireConditionLF">Tire Condition for Left Front:</label>
+            <select id="tireConditionLF" name="tireConditionLF" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Needs Replacement">Needs Replacement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tireConditionRF">Tire Condition for Right Front:</label>
+            <select id="tireConditionRF" name="tireConditionRF" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Needs Replacement">Needs Replacement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tirePressureLR">Tire Pressure for Left Rear:</label>
+            <input type="number" id="tirePressureLR" name="tirePressureLR" required>
+        </div>
+        <div class="form-group">
+            <label for="tirePressureRR">Tire Pressure for Right Rear:</label>
+            <input type="number" id="tirePressureRR" name="tirePressureRR" required>
+        </div>
+        <div class="form-group">
+            <label for="tireConditionLR">Tire Condition for Left Rear:</label>
+            <select id="tireConditionLR" name="tireConditionLR" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Needs Replacement">Needs Replacement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tireConditionRR">Tire Condition for Right Rear:</label>
+            <select id="tireConditionRR" name="tireConditionRR" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Needs Replacement">Needs Replacement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="overallTireSummary">Overall Tire Summary:</label>
+            <textarea id="overallTireSummary" name="overallTireSummary" maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tireImages">Upload Images of Tires:</label>
+            <input type="file" id="tireImages" name="tireImages" accept="image/*" multiple>
+        </div>
+</body>
+</div>
+
+</html>

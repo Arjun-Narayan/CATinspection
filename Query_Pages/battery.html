@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- BATTERY Section -->
+        <h3>Battery</h3>
+        <div class="form-group">
+            <label for="batteryMake">Battery Make:</label>
+            <input type="text" id="batteryMake" name="batteryMake" required>
+        </div>
+        <div class="form-group">
+            <label for="batteryReplacementDate">Battery Replacement Date:</label>
+            <input type="date" id="batteryReplacementDate" name="batteryReplacementDate">
+        </div>
+        <div class="form-group">
+            <label for="batteryVoltage">Battery Voltage:</label>
+            <input type="number" id="batteryVoltage" name="batteryVoltage" required>
+        </div>
+        <div class="form-group">
+            <label for="batteryWaterLevel">Battery Water Level:</label>
+            <select id="batteryWaterLevel" name="batteryWaterLevel" required>
+                <option value="Good">Good</option>
+                <option value="Ok">Ok</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="batteryDamage">Condition of Battery (Any damage):</label>
+            <select id="batteryDamage" name="batteryDamage" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="batteryDamageImage">Upload Image if Damaged:</label>
+            <input type="file" id="batteryDamageImage" name="batteryDamageImage" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="batteryLeak">Any Leak/Rust in Battery:</label>
+            <select id="batteryLeak" name="batteryLeak" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="batterySummary">Battery Overall Summary:</label>
+            <textarea id="batterySummary" name="batterySummary" maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="batteryImages">Upload Battery Images:</label>
+            <input type="file" id="batteryImages" name="batteryImages" accept="image/*" multiple>
+        </div>
+    </div>
+
+</body>
+
+</html>
