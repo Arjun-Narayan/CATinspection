@@ -1,0 +1,6 @@
+section.card{
+    width: 80vw;
+    max-width: 600px;
+    padding: 10px;
+    display: flex;
+}

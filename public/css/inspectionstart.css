@@ -1,0 +1,38 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.flex-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+form .d-flex{
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form label{
+    width: 100%;
+    text-align: left;
+}
+
+form input{
+    width: 300px !important;
+}
+
+form > button{
+    width: 200px;
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 720px) {
+    .flex-container{
+        flex-direction: column;
+    }
+}

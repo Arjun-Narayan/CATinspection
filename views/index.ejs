@@ -1,0 +1,21 @@
+<%- include('header.ejs') %>
+
+    <h1 class="px-5 poppins">Your Inspections</h1>
+    <% for( let i = 0; i < allInspections.length; i++ ) { %>
+        <section class="card mx-5 mt-2">
+            <div class="card-body">
+              <h5 class="card-title proza">Inspection ID: <%= allInspections[i].id %></h5>
+              <p class="card-text my-1 py-0 montserrat">Vehicle: <%= allInspections[i].type + " Model: " + allInspections[i].model %></p>
+              <p class="card-text my-1 py-0 montserrat">Date and Time: <%= allInspections[i].date%></p>
+              <p class="card-text my-1 py-0 montserrat">Location: <%= allInspections[i].location %></p>
+              <a href="#" class="btn btn-primary montserrat">View Report</a>
+            </div>
+        </section>
+    <% } %>
+    <% if (allInspections.length === 0) { %>
+        <section class="no-inspection-text mx-5 mt-2 montserrat">
+            <p>You have not conducted any inspections yet</p>
+            <button type="button" class="btn btn-lg btn-success">Start Inspection</button>
+        </section>
+    <% } %>
+<%- include('footer.ejs') %>

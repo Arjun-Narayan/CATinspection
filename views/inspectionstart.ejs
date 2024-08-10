@@ -1,0 +1,39 @@
+<%- include('header.ejs') %>
+    <h1 class="px-5 poppins">Fill the details</h1>
+
+    <form class="px-5 text-left" action="/postHeader" method="post">
+        <div class="flex-container">
+            <div class="d-flex my-3 gap-5">
+                <div>
+                    <label for="cust-id" class="text-left pb-2 proza">Vehicle Serial Number</label>
+                    <input type="text" id="cust-id" class="form-control" name="cust-id" required>
+                </div>
+                <div>
+                    <label for="inspection-loc" class="text-left pb-2 proza">Inspection Location Number</label>
+                    <input type="text" id="inspection-loc" class="form-control" name="inspection-loc" required>
+                </div>
+                <div>
+                    <label for="odo-reading" class="text-left pb-2 proza">Odometer Reading</label>
+                    <input type="text" id="odo-reading" class="form-control" name="odo-reading" required>
+                </div>
+            </div>
+            <div class="d-flex my-3 gap-5">
+                <div>
+                    <label for="model-num" class="text-left pb-2 proza">Vehicle Model Number</label>
+                    <input type="text" id="model-num" class="form-control" name="model-num" required>
+                </div>
+                <div>
+                    <label for="geo-coordinates" class="text-left pb-2 proza">Geo Coordinates (if necesary)</label>
+                    <input type="text" id="geo-coordinates" class="form-control" name="geo-coordinates">
+                </div>
+                <div>
+                    <label for="cust-id" class="text-left pb-2 proza">CAT Customer ID</label>
+                    <input type="text" id="cust-id" class="form-control" name="cust-id" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-success proza">Submit</button>
+        <button type="button" class="btn btn-lg btn-light"><img src="assets/mic.svg" height="25"></button>
+    </form>
+
+<%- include('footer.ejs') %>
