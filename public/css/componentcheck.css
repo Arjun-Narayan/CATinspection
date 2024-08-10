@@ -1,0 +1,35 @@
+#component-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#component-form > .property-select{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+    width: 700px;
+    max-width: 70vw;
+}
+
+#component-form .select-container{
+    display: flex;
+    gap: 10px;
+}
+
+#component-form input[type="select"] option{
+    cursor: pointer;
+    display: none;
+}
+
+#component-form button{
+    width: 200px;
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 780px) {
+    #component-form .select-container{
+        flex-direction: column;
+    }
+}

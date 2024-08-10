@@ -1,0 +1,10 @@
+<%- include('header.ejs') %>
+
+        <h1 class="px-5 poppins">Choose Machine Component to Begin</h1>
+        <ul class="component-list mx-5 px-5">
+            <% for( let i = 0; i < components.length; i++ ) { %>
+                <li><a href="/<%= components[i].toLowerCase() %>" class="fs-2 px-5 proza"><%= components[i] %></a></li>
+            <% } %>
+        </ul>
+
+<%- include('footer.ejs') %>

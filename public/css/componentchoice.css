@@ -1,0 +1,11 @@
+ul.component-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul.component-list a{
+    text-decoration: none;
+    color: inherit;
+}
