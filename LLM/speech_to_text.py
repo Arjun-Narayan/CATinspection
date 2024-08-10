@@ -13,8 +13,3 @@ def query(filename):
         data = f.read()
     response = requests.post(API_URL, headers=headers, data=data)
     return response.json()["text"]
-
-input = ".\\TEST\\WhatsApp Audio 2024-08-04 at 19.14.35_6aa9df4b.dat.unknown"
-
-output = query(input)
-print(output)

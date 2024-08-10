@@ -1,12 +1,15 @@
+import sys
+import io
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
-# Load the model
+# Set output encoding to UTF-8
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def classify_image(img_path):
-    model = load_model('.\\MODEL\\car_damage_model.h5')
+    model = load_model('./MODEL/exterior.h5')  
     img = image.load_img(img_path, target_size=(224, 224))
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
@@ -26,7 +29,7 @@ def classify_image(img_path):
 
     if pred_class[0] in known_classes:
         classification = known_classes[pred_class[0]]
-        result = [ "yes", classification ]
+        result = ["yes", classification]
     else:
         result = ["no"]
 

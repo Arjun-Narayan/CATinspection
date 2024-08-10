@@ -87,75 +87,9 @@ def save_report_as_pdf(report_text, output_filename):
 
     pdf.output(output_filename)
 
-# Sample JSON data
-data = {
-    "header": {
-        "truck_serial_number": "7301234",
-        "truck_model": "730",
-        "inspection_id": "12345",
-        "inspector_name": "John Doe",
-        "inspection_employee_id": "5678",
-        "date_time": "2024-08-10",
-        "location": "XYZ",
-        "geo_coordinates": "N/A",
-        "service_meter_hours": "1234 hrs",
-        "inspector_signature": "John Doe",
-        "customer_name": "ABC Corp",
-        "cat_customer_id": "CUST123",
-        "images": ["header_image_1.jpg", "header_image_2.jpg"]
-    },
-    "tires": {
-        "left_front_pressure": "30psi",
-        "right_front_pressure": "32psi",
-        "left_front_condition": "Good",
-        "right_front_condition": "Ok",
-        "left_rear_pressure": "30psi",
-        "right_rear_pressure": "32psi",
-        "left_rear_condition": "Needs Replacement",
-        "right_rear_condition": "Good",
-        "images": ["tire_image_1.jpg", "tire_image_2.jpg", "tire_image_3.jpg", "tire_image_4.jpg"]
-    },
-    "battery": {
-        "make": "CAT",
-        "replacement_date": "2023-01-01",
-        "voltage": "12V",
-        "water_level": "Good",
-        "condition_damage": "N",
-        "leak_rust": "N",
-        "images": ["battery_image_1.jpg"]
-    },
-    "exterior": {
-        "rust_dent_damage": "N",
-        "oil_leak_suspension": "N",
-        "images": ["exterior_image_1.jpg"]
-    },
-    "brakes": {
-        "fluid_level": "Ok",
-        "front_condition": "Good",
-        "rear_condition": "Needs Replacement",
-        "emergency_brake": "Good",
-        "images": ["brakes_image_1.jpg"]
-    },
-    "engine": {
-        "rust_dent_damage": "N",
-        "oil_condition": "Good",
-        "oil_color": "Clean",
-        "brake_fluid_condition": "Good",
-        "brake_fluid_color": "Clean",
-        "oil_leak": "N",
-        "images": ["engine_image_1.jpg"]
-    },
-    "customer_feedback": {
-        "feedback": "Satisfied with service.",
-        "images": ["customer_feedback_image_1.jpg"]
-    }
-}
-
 #Call this function
 def report_generation(data):
     final_report = generate_final_report(data)  
     save_report_as_pdf(final_report, "technician_service_report.pdf")
     print("PDF report generated successfully.")
     return
-
-report_generation(data)
