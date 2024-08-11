@@ -1,0 +1,13 @@
+#summary{
+    resize: none;
+    width: 1000px;
+    max-width: 70vw;
+    overflow: hidden;
+    height: 400px;
+    line-height: 2;
+}
+
+form button{
+    width: 250px;
+    justify-self: flex-start;
+}

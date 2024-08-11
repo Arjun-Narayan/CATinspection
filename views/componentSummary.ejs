@@ -1,0 +1,12 @@
+<%- include('header.ejs') %>
+
+    <h1 class="px-5 poppins"><%= component %> Summary</h1>
+    <form action="/updateSummary" method="post" class="mx-5 d-flex flex-column gap-5">
+        <input type="text" class="d-none" name="component" id="component" value="<%= component %>">
+        <textarea name="summary" id="summary" class="form-control montserrat py-0">
+            <%= summary %>
+        </textarea>
+        <button type="submit" class="btn btn-lg btn-success">Submit</button>
+    </form>
+
+<%- include('footer.ejs') %>

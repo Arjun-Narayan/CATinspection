@@ -403,6 +403,16 @@ app.post("/sendReport", async (req, res) => {
         responseType: "json",
     })).data;
     summaryList[componentName] = response.content;
+    res.render("componentSummary.ejs", {
+        cssFiles: ["css/header.css", "css/componentSummary.css", "css/footer.css"],
+        runningInspection: true,
+        component: componentName,
+        summary: summaryList[componentName],
+    });
+});
+
+app.post("updateSummary", (req, res) =>{
+    summaryList[req.body.component] = req.body.summary;
     res.redirect("/componentChoice");
 });
 
