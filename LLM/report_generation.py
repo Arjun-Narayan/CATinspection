@@ -1,6 +1,7 @@
 import requests
 from dotenv import load_dotenv
 import os
+import sys
 
 load_dotenv('.env')
 
@@ -24,3 +25,4 @@ def report_generator(input):
         return output[0].get('generated_text', '')
     return ''
 
+print(report_generator(sys.argv[1]))

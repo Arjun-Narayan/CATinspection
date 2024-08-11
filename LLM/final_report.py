@@ -2,6 +2,9 @@ import requests
 from dotenv import load_dotenv
 import os
 from fpdf import FPDF
+import sys
+import json
+from flask import Flask
 
 load_dotenv('.env')
 
@@ -180,4 +183,5 @@ def report_generation(data):
     print("PDF report generated successfully.")
     return
 
-report_generation(data)
+report = json.loads(sys.argv[1])
+report_generation(report)

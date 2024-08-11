@@ -13,8 +13,10 @@ app.use(morgan("dev"));
 
 var currentInspection = {};
 var components = ["Header", "Tires", "Battery", "Exterior", "Brakes", "Engine", "Feedback"];
+var summaryList = {}
 
 function allValuesReset() {
+    var summaryList = {}
     currentInspection = {};
     components =  ["Header", "Tires", "Battery", "Exterior", "Brakes", "Engine", "Feedback"];
 }
@@ -62,7 +64,6 @@ app.get("/inspectionStart", (req, res) => {
 
 app.get("/componentChoice", (req, res) => {
     if (components.length === 1) {
-        console.log(currentInspection);
         res.redirect("/feedback");
     } else {
         res.render("componentchoice.ejs", {
@@ -351,7 +352,7 @@ app.post("/postHeader", async (req, res) => {
     res.redirect("/componentChoice");
 });
 
-app.post("/sendReport", (req, res) => {
+app.post("/sendReport", async (req, res) => {
     const componentName = req.body.component_name;
     components = components.filter((component) => (component != componentName));
     let componentContent = {};
@@ -386,29 +387,55 @@ app.post("/sendReport", (req, res) => {
     } else if(componentName === "Engine"){
         componentContent.rust_dent_damage = req.body.question1;
         componentContent.oil_condition = req.body.question2;
-        componentContent.oil_colour = req.body.question3;
+        componentContent.oil_color = req.body.question3;
         componentContent.brake_fluid_condition = req.body.question4;
-        componentContent.brake_fluid_colour = req.body.question5;
+        componentContent.brake_fluid_color = req.body.question5;
         componentContent.oil_leak = req.body.question6;
         currentInspection.engine = componentContent;
     }
+    const response = (await axios({
+        method: "post",
+        baseURL: apiURL,
+        url: "getSummary",
+        data: {
+            content: JSON.stringify(componentContent),
+        },
+        responseType: "json",
+    })).data;
+    summaryList[componentName] = response.content;
     res.redirect("/componentChoice");
 });
 
 app.post("/feedback", async (req, res) =>{
+    console.log("sent feedback");
     let feedbackContent = {};
     components = components.filter((component) => (component != "Feedback"));
     feedbackContent.feedback = req.body.feedback;
     currentInspection.customer_feedback = feedbackContent;
+    console.log(currentInspection);
     try {
-        const response = await axios({
+        const response = (await axios({
             method: "post",
             baseURL: apiURL,
             url: "addInspection",
             data: {
                 inspection: JSON.stringify(currentInspection),
             }
-        });
+        })).data;
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+    try {
+        const response = (await axios({
+            method: "post",
+            baseURL: apiURL,
+            url: "generateReport",
+            data: {
+                inspectionSummary: JSON.stringify(currentInspection),
+            }
+        })).data;
+        console.log(response.content);
     } catch (error) {
         console.log(error);
     }
