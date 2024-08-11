@@ -1,0 +1,48 @@
+<%- include('header.ejs') %>
+
+    <h1 class="px-5 poppins">Begin <%= component %> Inspection</h1>
+
+    <form action="/sendReport" method="post" id="component-form" class="px-5">
+        <input type="text" name="component_name" id="component_name" class="d-none" value="<%= component %>">
+        <% for( let i=0; i < checklist.length; i++ ) { %>
+            <% if (checklist[i].type==="select" ) { %>
+                <div class="property-select">
+                    <label for="<%= 'question' + (i+1) %>" class="proza fs-5">
+                        <%= checklist[i].question %>
+                    </label>
+                    <div class="select-container">
+                        <select name="<%= 'question' + (i+1) %>" id="<%= 'question' + (i+1) %>" class="form-select montserrat">
+                                <% for(let j=0; j < (checklist[i].options).length; j++) { %>
+                                    <option value="<%= (checklist[i].options)[j] %>">
+                                        <%= (checklist[i].options)[j] %>
+                                    </option>
+                                <% } %>
+                        </select>
+                        <% if (checklist[i].photo) { %>
+                            <input type="file" name="<%= "question" + i + "_image" %>" class="form-control" accept="image/*" required>
+                        <% } %>
+                    </div>
+                </div>
+                <% }else { %>
+                    <div class="property-select">
+                        <label for="<%= " question" + (i+1) %>" class="proza fs-5">
+                            <%= checklist[i].question %>
+                        </label>
+                        <div class="select-container">
+                            <input type="<%= checklist[i].type %>" step="0.01" name="<%= 'question' + (i+1) %>" id="<%= 'question' + (i+1) %>" class="form-control" required>
+                            <% if (checklist[i].photo) { %>
+                                <input type="file" name="<%= "question" + i + "_image" %>" class="form-control" accept="image/*" required>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+        <% } %>
+        <div class="property-select">
+            <label for="additional-images" class="proza fs-5">Additional Images</label>
+            <input type="file" name="additional_images" id="additional_images" class="form-control" accept="image/*" multiple>
+        </div>
+            <button type="submit" class="btn btn-lg btn-success proza">Submit</button>
+            <button type="button" class="btn btn-lg btn-light"><img src="assets/mic.svg" height="25"></button>
+    </form>
+
+<%- include('footer.ejs') %>

@@ -1,0 +1,12 @@
+<%- include('header.ejs') %>
+
+    <h1 class="px-5 poppins">Enter Customer Feedback and Other Important Details</h1>
+    <form action="/feedback" method="post" class="px-5">
+        <label for="feedback" class="proza fs-4">Customer Feedback</label>
+        <textarea name="feedback" id="feedback" class="form-control montserrat" required></textarea>
+        <input type="file" name="extra-images" class="form-control mt-5" accept="image/*" multiple>
+        <button type="submit" class="btn btn-lg btn-success proza mb-3 mt-4">Submit</button>
+        <button type="button" class="btn btn-lg btn-light mt-2"><img src="assets/mic.svg" height="25"></button>
+    </form>
+
+<%- include('footer.ejs') %>

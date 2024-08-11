@@ -17,13 +17,12 @@
             <header class="border-bottom pb-3">
                 <h1 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                     <img src="assets/logo.png" class="bi me-2" width="100">
-                    <span class="fs-2 poppins">CATinspection</span>
+                    <a href="/" class="fs-2 poppins">CATinspection</a>
                 </h1>
                 <ul class="nav nav-pills px-5">
-                    <% if (locals.username){ %>
-                        <li class="nav-item"><a href="#" class="btn btn-lg btn-outline-info mx-2 proza">Start Inspection</a></li>
-                    <% } %>
-                    <% if(runningInspection === 1){%>
+                    <% if (!runningInspection){ %>
+                        <li class="nav-item"><a href="/inspectionStart" class="btn btn-lg btn-outline-info mx-2 proza">Start Inspection</a></li>
+                    <% } else{%>
                         <li class="nav-item"><p class="fs-4 mx-2 proza">Performing Inspection</p></li>
                     <% } %>
                 </ul>

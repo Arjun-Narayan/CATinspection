@@ -1,0 +1,16 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    max-width: 90vw;
+}
+
+form textarea{
+    resize: none;
+    height: 300px;
+}
+
+form button{
+    width: 200px;
+    align-self: flex-start;
+}
